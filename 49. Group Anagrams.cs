@@ -1,76 +1,60 @@
-﻿https://leetcode.com/problems/group-anagrams/description/
+﻿
+https://leetcode.com/problems/group-anagrams/description/
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleApp54
+namespace ConsoleApplication1
 {
     class Program
     {
 
         public static IList<IList<string>> GroupAnagrams(string[] strs)
         {
-            Dictionary<string, List<string >> hm =
-               new Dictionary<string, List<string>>();
+            Dictionary<string, List<string>> diccio = new Dictionary<string, List<string>>();
 
-            for (int i = 0; i < strs.Length; i++)
+            foreach (string elem in strs)
             {
-                String actual = strs[i];
-                char[] ordAux = actual.ToCharArray();
-                Array.Sort(ordAux);
-                string ord = new string(ordAux);
-
-                if (hm.ContainsKey(ord))
-                {
-                    List<String> aux = hm[ord];
-                    aux.Add(actual);
-                    hm[ord] = aux;
-                }
-                else
-                {
-                    List<String> aux = new List<string>();
-                    aux.Add(actual);
-                    hm[ord] = aux;
-                }
+                char[] sort = elem.ToCharArray();
+                Array.Sort(sort);
+                diccio[new string( sort)] = new List<string>();
             }
 
-            IList<IList<String>> lista =
-                    new List<IList<string>>();
-
-            foreach (string key in hm.Keys)
-            //foreach(KeyValuePair<string, List<string>> kvp in hm)
+            foreach (string elem in strs)
             {
-                List<String> aux = new List<string>();
-                for (int i = 0; i < hm[key].Count; i++)
-                {
-                    //aux.add(hm.get(key).get(i));
-                    aux.Add(hm[key][i]);
-                }
+
+                char[] sort = elem.ToCharArray();
+                Array.Sort(sort);
+                diccio[new string( sort)].Add(elem);
+            }
+
+            List<List<string>> res = new List<List<string>>();
+
+
+            foreach (KeyValuePair<string, List<string>> kvp in diccio)
+            {
+                List<string> aux = new List<string>(kvp.Value);
                 aux.Sort();
-                lista.Add(aux);
+                res.Add(aux);
             }
-            return lista;
+
+
+            var converted = ((IList<IList<string >>)res.Cast<IList<string >>().ToList());
+
+            return converted;
 
         }
 
         static void Main(string[] args)
         {
 
-            String[] strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
-            IList<IList<String>> res = GroupAnagrams(strs);
+            string[] s = { "eat", "tea", "tan", "ate", "nat", "bat" };
 
-            foreach (List<String> lista in res)
-            {
-                foreach (String elem in lista)
-                {
-                    Console.Write(elem + " ");
-                }
-                Console.WriteLine();
-            }
+            GroupAnagrams(s);
 
             Console.ReadLine();
+
         }
     }
 }
