@@ -1,13 +1,30 @@
-﻿ public bool ContainsDuplicate(int[] nums)
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        public class Solution
         {
-            HashSet<int> hash = new HashSet<int>();
-            for (int i = 0; i < nums.Length; i++)
+            public bool ContainsDuplicate(int[] nums)
             {
-                if (hash.Contains(nums[i]))
+                HashSet<int> hash = new HashSet<int>();
+                for (int i = 0; i < nums.Length; i++)
                 {
-                    return true;
+                    if (hash.Contains(nums[i]))
+                    {
+                        return true;
+                    }
+                    hash.Add(nums[i]);
                 }
-                hash.Add(nums[i]);
+                return false;
             }
-            return false;
         }
+        static void Main(string[] args)
+        {
+        }
+    }
+}
