@@ -1,0 +1,100 @@
+﻿https://leetcode.com/problems/max-increase-to-keep-city-skyline/
+
+
+
+public class Solution {
+    public int MaxIncreaseKeepingSkyline(int[][] grid) {
+        
+         int[] max_filas = new int[grid.Length];
+            int[] max_cols = new int[grid[0].Length];
+
+            int ans = 0;
+
+            for (int i = 0; i < grid.Length; i++)
+            {
+                int max_fila = 0;
+                int max_col = 0;
+                
+                for (int j = 0; j < grid[i].Length; j++)
+                {
+                    max_fila = Math.Max(max_fila, grid[i][j]);
+                    max_col = Math.Max(max_col, grid[j][i]);
+                }
+                
+                max_filas[i] = max_fila;
+                max_cols[i] = max_col;
+
+                for (int j = 0; j < grid[i].Length; j++)
+                {
+
+                    ans += Math.Min(max_filas[i], max_cols[j]) - grid[i][j];
+                }
+            }
+
+            return ans;
+    }
+}
+
+
+//-----------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication20
+{
+    class Program
+    {
+
+        public static int MaxIncreaseKeepingSkyline(int[][] grid)
+        {
+
+            int[] max_filas = new int[grid.Length];
+            int[] max_cols = new int[grid[0].Length];
+
+
+            for (int i = 0; i < grid.Length; i++)
+            {
+                int max = 0;
+                for (int j = 0; j < grid[i].Length; j++)
+                {
+                    max = Math.Max(max, grid[i][j]);
+                }
+                max_filas[i] = max;
+                //max_filas[i][j] = max;
+            }
+
+            for (int j = 0; j < grid[0].Length; j++)
+            {
+                int max = 0;
+                for (int i = 0; i < grid.Length; i++)
+                {
+                    max = Math.Max(max, grid[i][j]);
+                }
+                max_cols[j] = max;
+            }
+
+            int[][] res = new int[grid.Length][];
+            for (int i = 0; i < grid.Length; i++)
+            {
+                res[i] = new int[grid[i].Length];
+                for (int j = 0; j < grid[i].Length; j++)
+                {
+                    res[i][j] = Math.Min(max_filas[i], max_cols[j]); 
+                }
+            }
+
+
+        }
+
+        static void Main(string[] args)
+        {
+
+
+            Console.ReadLine();
+        }
+    }
+}
