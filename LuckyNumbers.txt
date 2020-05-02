@@ -1,0 +1,48 @@
+﻿ https://omegaup.com/arena/problem/Ordenamiendo-por-frecuencia/#problems
+
+ public static IList<int> LuckyNumbers(int[][] matrix)
+        {
+
+
+            
+            int[] minFila = new int[matrix.Length];
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                int minf = int.MaxValue;
+                for (int j = 0; j < matrix[i].Length; j++)
+                {
+                    minf = Math.Min(minf, matrix[i][j]);
+                }
+                minFila[i] = minf;
+            }
+
+
+
+            int[] maxCols = new int[matrix[0].Length];
+            for (int j = 0; j < matrix[0].Length; j++)
+            {
+                int maxc = 0;
+                for (int i = 0; i < matrix.Length; i++)
+                {
+                    maxc = Math.Max(maxc, matrix[i][j]);
+                }
+                maxCols[j] = maxc;
+            }
+
+            IList<int> res = new List<int>();
+
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                for (int j = 0; j < matrix[i].Length; j++)
+                {
+                    if (matrix[i][j] == minFila[i] && matrix[i][j] == maxCols[j])
+                    {
+                        res.Add(matrix[i][j]);
+                        break;
+                    }
+                }
+            }
+
+            return res;
+
+        }
