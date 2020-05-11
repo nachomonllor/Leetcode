@@ -1,0 +1,44 @@
+﻿https://leetcode.com/problems/set-matrix-zeroes/
+
+public static  void SetZeroes(int[][] matrix)
+        {
+
+            bool[] filas = new bool[matrix.Length];
+            bool[] cols = new bool[matrix[0].Length];
+
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                for (int j = 0; j < matrix[i].Length; j++)
+                {
+                    if (matrix[i][j] == 0)
+                    {
+                        filas[i] = true;
+                        cols[j] = true;
+                    }
+                }
+            }
+
+
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                for (int j = 0; j < matrix[i].Length; j++)
+                {
+                    if (filas[i] || cols[j] )
+                    {
+                        matrix[i][j] = 0;
+                    }
+                }
+            }
+
+            //for (int i = 0; i < matrix.Length; i++)
+            //{
+            //    for (int j = 0; j < matrix.Length; j++)
+            //    {
+            //        Console.Write(matrix[i][j] + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+
+        }

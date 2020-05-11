@@ -1,0 +1,34 @@
+﻿   
+https://leetcode.com/problems/shifting-letters/
+
+ public static string ShiftingLetters(string S, int[] shifts)
+        {
+            Array.Reverse(shifts);
+            int[] sumas = new int[shifts.Length];
+            sumas[0] = shifts[0] ;
+
+
+            for (int i = 1; i < shifts.Length; i++)
+            {
+                sumas[i] = (sumas[i - 1] + (shifts[i])) ;
+                sumas[i] = sumas[i] % 26;
+
+            }
+
+            Array.Reverse(sumas);
+
+
+            StringBuilder res = new StringBuilder();
+
+            for (int i = 0; i < sumas.Length; i++)
+            {
+         
+                res.Append((char)((S[i] - 'a' + sumas[i] + 26) % 26 + 'a'));
+
+            }
+
+
+
+            return res.ToString();
+
+        }
