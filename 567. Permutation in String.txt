@@ -1,0 +1,93 @@
+﻿https://leetcode.com/problems/permutation-in-string/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication30
+{
+    class Program
+    {
+
+        static int[] cargarFrecuencia(string s)
+        {
+            int[] frec = new int[26];
+
+            for (int i = 0; i < s.Length; i++) frec[s[i] - 'a']++;
+            return frec;
+        }
+
+        static bool Comparar(int[] a, int[] b)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] != b[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public static bool CheckInclusion(string s1, string s2)
+        {
+
+            if (s1.Length > s2.Length)
+            {
+                return false;
+            }
+
+            int[] frec_s1 = cargarFrecuencia(s1);
+            int[] frec_s2 = cargarFrecuencia(s2.Substring(0, s1.Length));
+
+            bool iguales = true;
+            for (int i = 0; i < frec_s1.Length; i++)
+            {
+                if (frec_s1[i] != frec_s2[i])
+                {
+                    iguales = false;
+                    break;
+                }
+            }
+
+            if (iguales) return true;
+
+            for (int i = 0; i < s2.Length - s1.Length; i++)
+            {
+
+                string subs = s2.Substring(i, s1.Length);
+
+                frec_s2[s2[i] - 'a']--;
+                frec_s2[s2[i + s1.Length] - 'a']++;
+
+                if (Comparar(frec_s2, frec_s1))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+
+        }
+
+
+        static void Main(string[] args)
+        {
+
+           // string s1 = "ab", s2 = "eidbaooo";
+          //  string s1 = "ab", s2 = "eidboaoo";
+
+            string s1 = "a";
+            string s2 = "ab";
+
+           Console.WriteLine(CheckInclusion(s1, s2));
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}

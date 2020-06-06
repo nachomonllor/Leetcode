@@ -1,0 +1,234 @@
+﻿https://leetcode.com/problems/queens-that-can-attack-the-king/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication30
+{
+    class Program
+    {
+
+        //static bool MismaFila(int[] queen, int[] king)
+        //{
+
+        //}
+
+
+        public static IList<IList<int>> QueensAttacktheKing(int[][] queens, int[] king)
+        {
+
+            int filaRey = king[0];
+            int colRey = king[1];
+
+            int[] arribaIzq = new int[2];
+            arribaIzq[0] = -1;
+            arribaIzq[1] = -1;
+
+            int[] arribaDer = new int[2];
+            arribaDer[0] = -1;
+            arribaDer[1] = int.MaxValue;
+
+            int[] abajoIzq = new int[2];
+            abajoIzq[0] = int.MaxValue;
+            abajoIzq[1] = -1;
+
+            int[] abajoDer = new int[2];
+            abajoDer[0] = int.MaxValue;
+            abajoDer[1] = int.MaxValue;
+
+            int[] izq = new int[2];
+            izq[0] = -1;
+            izq[1] = -1;
+
+            int[] der = new int[2];
+            der[0] = -1;
+            der[1] = int.MaxValue;
+
+            int[] arriba = new int[2];
+            arriba[0] = -1;
+            arriba[1] = -1;
+
+
+            int[] abajo = new int[2];
+            abajo[0] = int.MaxValue;
+            abajo[1] = -1;
+
+            
+
+            for (int i = 0; i < queens.Length; i++)
+            {
+                int fila = queens[i][0];
+                int col = queens[i][1];
+
+                //me fijo si esta en una diagonal arriba izquiera => abajo derecha
+
+                if (fila < filaRey && col < colRey) //arriba izquierda
+                {
+                    if (Math.Abs(filaRey - fila) == Math.Abs(colRey - col))//estan en la misma diagonal (diagonal ArribaIzq - AbajoDer)
+                    {
+                        arribaIzq[0] = Math.Max(arribaIzq[0], fila); //tomo la fila mas grande, o sea la que esta mas abajo (mas cerca de la del rey)
+                        arribaIzq[1] = Math.Max(arribaIzq[1], col); // lo mismo para la columna, la que esta mas a la derecha
+                    }
+                }
+
+                else if (fila > filaRey && col > colRey)//abajo derecha
+                {
+                    if (Math.Abs(filaRey - fila) == Math.Abs(colRey - col))//estan en la misma diagonal
+                    {
+                        abajoDer[0] = Math.Min(abajoDer[0], fila);
+                        abajoDer[1] = Math.Min(abajoDer[1], col);
+                    }
+                }
+                else if (fila > filaRey && col < colRey) //abajo izquierda
+                {
+                    if (filaRey + colRey == fila + col) //misma diagonal (diagonal abajo izquierda => arriba derecha)
+                    {
+                        abajoIzq[0] = Math.Min(abajoIzq[0], fila);
+                        abajoIzq[1] = Math.Max(abajoIzq[1], col);
+                    }
+                }
+                else if (fila < filaRey && col > colRey) //arriba derecha
+                {
+                    if (filaRey + colRey == fila + col) //misma diagonal (diagonal abajo izquierda => arriba derecha)
+                    {
+                        arribaDer[0] = Math.Max(arribaDer[0], fila);
+                        arribaDer[1] = Math.Min(arribaDer[1], col);
+                    }
+                }
+                else if (fila < filaRey)
+                {
+                    if (col == colRey)
+                    {
+                        arriba[0] = Math.Max(arriba[0], fila);
+                        arriba[1] = col;
+                    }
+                }
+                else if (fila > filaRey)
+                {
+                    if (col == colRey)
+                    {
+                        abajo[0] = Math.Min(abajo[0], fila);
+                        abajo[1] = col;
+                    }
+                }
+                else if (col < colRey)
+                {
+                    if (fila == filaRey)
+                    {
+                        izq[0] = fila;
+                        izq[1] = Math.Max(izq[1], col);
+
+                    }
+
+                }
+                if (col > colRey)
+                {
+                    if (fila == filaRey)
+                    {
+                        der[0] = fila;
+                        der[1] = Math.Min(der[1], col);
+                    }
+                }
+
+
+            }
+
+
+            //Console.WriteLine(arribaIzq[0] + " " + arribaIzq[1]);
+            //Console.WriteLine(abajoDer[0] + " " + abajoDer[1]);
+            //Console.WriteLine(abajoIzq[0] + " " + abajoIzq[1]);
+            //Console.WriteLine(arribaDer[0] + " " + arribaDer[1]);
+
+            //Console.WriteLine(arriba[0] + " " + arriba[1]);
+            //Console.WriteLine(abajo[0] + " " + abajo[1]);
+            //Console.WriteLine(izq[0] + " " + izq[1]);
+            //Console.WriteLine(der[0] + " " + der[1]);
+
+            IList<IList<int>> res = new List<IList<int>>();
+
+            if (arribaIzq[0] != -1 && arribaIzq[0] != int.MaxValue) res.Add(arribaIzq.ToList());
+            if (abajoDer[0] != -1 && abajoDer[0] != int.MaxValue) res.Add(abajoDer.ToList());
+            if (abajoIzq[0] != -1 && abajoIzq[0] != int.MaxValue) res.Add(abajoIzq.ToList());
+            if (arribaDer[0] != -1 && arribaDer[0] != int.MaxValue) res.Add(arribaDer.ToList());
+
+            if (arriba[0] != -1 && arriba[0] != int.MaxValue) res.Add(arriba.ToList());
+            if (abajo[0] != -1 && abajo[0] != int.MaxValue) res.Add(abajo.ToList());
+            if (izq[0] != -1 && izq[0] != int.MaxValue) res.Add(izq.ToList());
+            if (der[0] != -1 && der[0] != int.MaxValue) res.Add(der.ToList());
+
+
+
+            return res ;
+        }
+
+
+        static void Main(string[] args)
+        {
+
+           // int[][] queens = 
+           //{
+           // new int[] {5,6},
+           // new int[]{7,7},
+           // new int[]{2,1},
+           // new int[]{0,7},
+           // new int[]{1,6},
+           // new int[]{5,1},
+           // new int[]{3,7},
+           // new int[]{0,3},
+           // new int[]{4,0},
+           // new int[]{1,2},
+           // new int[]{6,3},
+           // new int[]{5,0},
+           // new int[]{0,4},
+           // new int[]{2,2},
+           // new int[]{1,1},
+           // new int[]{6,4},
+           // new int[]{5,4},
+           //    new int[]{0,0},
+           //    new int[]{2,6},
+           //    new int[]{4,5},
+           //    new int[]{5,2},
+           //    new int[]{1,4},
+           //    new int[]{7,5},
+           //    new int[]{2,3},
+           //    new int[]{0,5},
+           //    new int[]{4,2},
+           //    new int[]{1,0},
+           //    new int[]{2,7},
+           //    new int[]{0,1},
+           //    new int[]{4,6},
+           //    new int[]{6,1},
+           //    new int[]{0,6},
+           //    new int[]{4,3},
+           //    new int[]{1,7}
+           //};
+
+           // int[] king = { 3, 4 };
+
+            int[][] queens =  {new int[] {2,0}, new int[] {1,6}, new int[] {3,4}, new int[] {4,1}};
+
+            int[] king = { 3, 5 };
+
+
+
+           IList<IList<int>> res = QueensAttacktheKing(queens, king);
+
+
+           foreach (IList<int> item in res)
+           {
+               foreach (int i in item)
+               {
+                   Console.Write(i + " ");
+               }
+               Console.WriteLine();
+           }
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
