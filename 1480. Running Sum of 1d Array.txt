@@ -1,0 +1,18 @@
+﻿ https://leetcode.com/problems/running-sum-of-1d-array/submissions/
+
+public int[] RunningSum(int[] nums)
+        {
+
+            int[] ans = new int[nums.Length];
+            int sum = nums[0];
+            ans[0] = nums[0];
+
+            for (int i = 1; i < nums.Length; i++)
+            {
+                sum += nums[i];
+                ans[i] = sum;
+            }
+
+            return ans;
+
+        }

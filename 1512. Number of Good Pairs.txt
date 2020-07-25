@@ -1,0 +1,24 @@
+﻿ https://leetcode.com/problems/number-of-good-pairs/submissions/
+
+public int NumIdenticalPairs(int[] nums)
+        {
+
+            int[] frec = new int[101];
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                frec[nums[i]]++;
+            }
+
+            int ans = 0;
+
+            for (int i = 0; i < frec.Length; i++)
+            {
+                int n = frec[i];
+                ans += (n * (n - 1) / 2);
+            }
+
+            return ans;
+
+
+        }
