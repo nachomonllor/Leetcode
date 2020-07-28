@@ -1,0 +1,35 @@
+﻿ 
+https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
+
+public static  int MaxVowels(string s, int k)
+        {
+            int vocales = 0;
+
+            int max = 0;
+
+            for (int i = 0; i < k; i++)
+            {
+                if ("aeiou".Contains(s[i]))
+                {
+                    vocales++;
+                }
+            }
+
+            max = vocales;
+
+            for (int i = 0; i +k < s.Length; i++)
+            {
+                if ("aeiou".Contains(s[i]))
+                {
+                    vocales--;
+                }
+                if ("aeiou".Contains(s[i + k]))
+                {
+                    vocales++;
+                }
+                max = Math.Max(max, vocales);
+            }
+
+            return max;
+
+        }
