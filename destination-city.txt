@@ -1,0 +1,41 @@
+﻿  
+ https://leetcode.com/problems/destination-city/submissions/
+
+public static string DestCity(IList<IList<string>> paths)
+        {
+
+            Dictionary<string, int> dic = new Dictionary<string, int>();
+
+            for (int i = 0; i < paths.Count; i++)
+            {
+                if (dic.ContainsKey(paths[i][0]))
+                {
+                    dic[paths[i][0]]++;
+                }
+                else
+                {
+                    dic[paths[i][0]] = 1;
+                }
+
+                if (dic.ContainsKey(paths[i][1]))
+                {
+                    dic[paths[i][1]]++;
+                }
+                else
+                {
+                    dic[paths[i][1]] = 1;
+                }
+            }
+
+            for (int i = 0; i < paths.Count; i++)
+            {
+
+                if (dic[paths[i][1]] == 1)
+                {
+                    return paths[i][1];
+                }
+
+            }
+            return "";
+ 
+        }
