@@ -1,0 +1,19 @@
+﻿    https://leetcode.com/explore/learn/card/fun-with-arrays/511/in-place-operations/3260/
+
+
+   public static int[] SortArrayByParity(int[] A)
+        {
+            for (int i = 1; i < A.Length; i++)
+            {
+                int indice = i;
+                while (indice > 0 && A[indice - 1] %2  != 0 && A[indice] %2 == 0)
+                {
+                    int temp = A[indice - 1];
+                    A[indice - 1] = A[indice];
+                    A[indice] = temp;
+                    indice--;
+                }
+            }
+            return A;
+
+        }
