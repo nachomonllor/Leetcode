@@ -1,0 +1,20 @@
+﻿  
+https://leetcode.com/explore/learn/card/fun-with-arrays/511/in-place-operations/3157/
+
+public static void MoveZeroes(int[] nums)
+        {
+
+            for (int i = 1; i < nums.Length; i++)
+            {
+                int indice = i;
+                while (indice > 0 && nums[indice - 1] == 0  && nums[indice] !=0)
+                {
+                    int temp = nums[indice - 1];
+                    nums[indice - 1] = nums[indice];
+                    nums[indice] = temp;
+                    indice--;
+                }
+            }
+
+
+        }
