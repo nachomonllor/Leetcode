@@ -1,0 +1,100 @@
+https://leetcode.com/explore/challenge/card/may-leetcoding-challenge/536/week-3-may-15th-may-21st/3332/
+
+
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+
+
+        static bool EsAnagrama(int[] a, int[] b)
+        {
+            for (int i = 0; i < 26; i++)
+            {
+                if (a[i] != b[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        static int[] cargarFrecuencias(string a, int len)
+        {
+            int[] ans = new int[26];
+
+            for (int i = 0; i < len; i++)
+            {
+                ans[a[i] - 'a']++;
+            }
+
+            return ans;
+        }
+
+        public static IList<int> FindAnagrams(string s, string p)
+        {
+            if(s == null || p == null || s.Length == 0 || p.Length == 0 || p.Length > s.Length)
+            {
+                IList<int> vacio = new List<int>();
+                return vacio;
+            }
+
+            int[] frec_p = cargarFrecuencias(p, p.Length);
+            int[] frec_substring = cargarFrecuencias(s, p.Length);
+            int len_substring = p.Length;
+
+            IList<int> indices = new List<int>();
+
+            int i = 0;
+            for (; i + len_substring < s.Length; i++)
+            { 
+
+                if (EsAnagrama(frec_p, frec_substring))
+                {
+                    indices.Add(i);
+                }
+
+                frec_substring[s[i] - 'a']--;
+                frec_substring[s[i + len_substring ] - 'a']++;
+            }
+
+            if (EsAnagrama(frec_p, frec_substring))
+            {
+                indices.Add(i);
+            }
+
+
+            return indices;
+
+        }
+
+
+
+        static void Main(string[] args)
+        {
+
+            //string s = "cbaebabacd";
+            //string p = "abc";
+
+            string s = "abab";
+            string p = "ab";
+
+
+            IList<int> ans = FindAnagrams(s, p);
+
+            foreach(int item in ans)
+            {
+                Console.Write(item + " ");
+            }
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
