@@ -1,0 +1,102 @@
+https://leetcode.com/explore/challenge/card/may-leetcoding-challenge/536/week-3-may-15th-may-21st/3333/
+
+
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+
+
+
+
+        static bool EsPermutacion(int[] a, int[] b)
+        {
+            for (int i = 0; i < 26; i++)
+            {
+                if (a[i] != b[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        static int[] cargarFrecuencias(string a, int len)
+        {
+            int[] ans = new int[26];
+
+            for (int i = 0; i < len; i++)
+            {
+                ans[a[i] - 'a']++;
+            }
+
+            return ans;
+        }
+
+
+
+
+        public static bool CheckInclusion(string s1, string s2)
+        {
+
+
+            if (s1.Length > s2.Length)
+            {
+              
+                return false;
+            }
+
+            int[] frec_s1 = cargarFrecuencias(s1, s1.Length);
+            int[] frec_substring = cargarFrecuencias(s2, s1.Length);
+            int len_substring = s1.Length;
+
+             
+            int i = 0;
+            for (; i + len_substring < s2.Length; i++)
+            {
+
+                if (EsPermutacion(frec_s1, frec_substring))
+                {
+                    //indices.Add(i);
+                    return true;
+
+                }
+
+                frec_substring[s2[i] - 'a']--;
+                frec_substring[s2[i + len_substring] - 'a']++;
+            }
+
+            if (EsPermutacion(frec_s1, frec_substring))
+            {
+                //indices.Add(i);
+                return true;
+            }
+
+
+            return false;
+        }
+
+
+
+        static void Main(string[] args)
+        {
+
+            string s1 = "ab";
+            string s2 = "eidbaooo";
+
+
+            Console.WriteLine(CheckInclusion(s1, s2));
+
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
