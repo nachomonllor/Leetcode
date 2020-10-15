@@ -1,0 +1,53 @@
+
+https://leetcode.com/problems/unique-paths/submissions/
+
+using System;
+
+namespace ConsoleApp4
+{
+    class Program
+    {
+        public static  int UniquePaths(int m, int n)
+        {
+            int[][] matriz = new int[m][];
+
+            for (int i = 0; i < m; i++)
+            {
+                matriz[i] = new int[n];
+            }
+
+            for (int i = 0; i < m; i++)
+            {
+                matriz[i][0] = 1;
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                matriz[0][i] = 1;
+            }
+
+
+            for (int i = 1; i < m; i++)
+            {
+                for (int j = 1; j < n; j++)
+                {
+                    matriz[i][j] = matriz[i][j - 1] + matriz[i - 1][j];
+                }
+            }
+
+            return matriz[m - 1][n - 1];
+        }
+
+
+
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine(UniquePaths(3,2));
+
+
+
+            Console.WriteLine("Hello World!");
+        }
+    }
+}

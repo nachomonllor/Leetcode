@@ -1,0 +1,108 @@
+using Microsoft.VisualBasic.CompilerServices;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+
+        static int[] IntervaloInterseccion(int[] A, int[] B)
+        {
+            int s1 = A[0];
+            int e1 = A[1];
+
+            int s2 = B[0];
+            int e2 = B[1];
+
+
+            //caso 1
+            if(e2 >= s1)
+            {
+                if(s2 <= e1)
+                {
+                    return new int[] { Math.Max(s1, s2), Math.Min(e1, e2) };
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            if(e1 >= s2)
+            {
+                if(e2 >= s1)
+                {
+                    return new int[] { Math.Max(s1, s2), Math.Min(e1, e2) };
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+
+            return null;
+        }
+
+
+        public static int[][] IntervalIntersection(int[][] A, int[][] B)
+        {
+            int punteroA = 0, punteroB = 0;
+
+            List<int[]> ans = new List<int[]>();
+
+            while(punteroA  < A.Length && punteroB < B.Length)
+            {
+                int[] interseccion = IntervaloInterseccion(A[punteroA], B[punteroB]);
+
+                if(interseccion != null)
+                {
+                    ans.Add(interseccion);
+                }
+                if(A[punteroA][1] == B[punteroB][1] )
+                {
+                    punteroA++;
+                    punteroB++;
+                }
+                else if(A[punteroA][1] > B[punteroB][1])
+                {
+                    punteroB++;
+                }
+                else if(A[punteroA][1] < B[punteroB][1])
+                {
+                    punteroA++;
+                }
+
+            }
+
+            
+            foreach(int [] item in ans)
+            {
+                Console.WriteLine(item[0] + " " + item[1]);
+            }
+
+            return new int[0][];
+
+        }
+
+
+
+        static void Main(string[] args)
+        {
+
+            int[][] A = { new int[] { 0, 2 }, new int[] { 5, 10 }, new int[] { 13, 23 }, new int[] { 24, 25 } };
+            int[][] B = { new int[] { 1, 5 }, new int[] { 8, 12 }, new int[] { 15, 24 }, new int[] { 25, 26 } };
+
+            //Output:[[1,2],[5,5],[8,10],[15,23],[24,24],[25,25]]
+            IntervalIntersection(A, B);
+
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}

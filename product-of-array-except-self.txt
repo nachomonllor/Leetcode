@@ -1,0 +1,85 @@
+https://leetcode.com/problems/product-of-array-except-self/submissions/
+
+def productExceptSelf( nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+
+        izquierda = [1] * len(nums)
+        derecha = [1] * len(nums)
+        prodIzq = nums[0]
+        prodDer = nums[len(nums) - 1] 
+
+        j = 1
+        k = len(nums) - 2
+
+
+        while j < len(nums) and k >=0:
+            izquierda[j] = prodIzq 
+            prodIzq *= nums[j]
+            
+            j+=1
+
+            derecha[k] = prodDer
+            prodDer *= nums[k]
+            k-=1  
+
+        ans = [0] * len(nums)
+
+        
+        for i in range(0, len(nums)):
+            ans[i] = izquierda[i] * derecha[i]
+
+        return ans 
+
+def productExceptSelf( nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+
+        izquierda = [1] * len(nums)
+        prodIzq = nums[0]
+        for i in range(1, len(nums)):
+            izquierda[i] = prodIzq 
+            prodIzq *= nums[i]
+          
+            
+           
+        print(izquierda)
+
+
+        derecha = [1] * len(nums)
+        prodDer = nums[len(nums) - 1] 
+        for i in range(len(nums) - 2, -1, -1):
+            derecha[i] = prodDer
+            prodDer *= nums[i]
+        
+
+        print(derecha)
+
+        ans = []
+
+        
+        for i in range(0, len(nums)):
+            ans.append(izquierda[i] * derecha[i])
+
+            
+
+     
+
+        return ans 
+
+
+
+print(productExceptSelf([2,3,5,0]))
+
+
+
+
+
+
+
+    
+

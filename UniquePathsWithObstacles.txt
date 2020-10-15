@@ -1,0 +1,90 @@
+ https://leetcode.com/explore/challenge/card/june-leetcoding-challenge/543/week-5-june-29th-june-30th/3375/
+
+ public static  int UniquePathsWithObstacles(int[][] obstacleGrid)
+        {
+
+            if (obstacleGrid[0][0] == 1) return 0;
+
+            int[][] matriz = new int[obstacleGrid.Length][];
+            for (int i = 0; i < obstacleGrid.Length; i++)
+            {
+                matriz[i] = new int[obstacleGrid[i].Length];
+
+            }
+
+            for (int i = 0; i < obstacleGrid.Length; i++)
+            {
+                for (int j = 0; j < obstacleGrid[i].Length; j++)
+                {
+                    if (obstacleGrid[i][j] == 1)
+                    {
+                        obstacleGrid[i][j] = -1;
+                    }
+                }
+            }
+
+
+
+            for (int i = 0; i < obstacleGrid.Length; i++)
+            {
+                if (obstacleGrid[i][0] != -1)
+                {
+                    matriz[i][0] = 1;
+                }
+                else
+                {
+                    break;
+                }
+
+            }
+            for (int i = 0; i < obstacleGrid[0].Length; i++)
+            {
+                if (obstacleGrid[0][i] != -1)
+                {
+                    matriz[0][i] = 1;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+          
+
+
+
+            for (int i = 1; i < obstacleGrid.Length; i++)
+            {
+                for (int j = 1; j < obstacleGrid[i].Length; j++)
+                {
+
+
+                    if (obstacleGrid[i][j] != -1)
+                    {
+
+                        if (obstacleGrid[i][j - 1] != -1)
+                        {
+                            matriz[i][j] += matriz[i][j - 1];
+                        }
+                        if (obstacleGrid[i - 1][j] != -1)
+                        {
+                            matriz[i][j] += matriz[i - 1][j];
+                        }
+
+                    }
+                }
+            }
+
+            //for (int i = 0; i < obstacleGrid.Length; i++)
+            //{
+            //    for (int j = 0; j < obstacleGrid[i].Length; j++)
+            //    {
+            //        Console.Write(matriz[i][j] + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+
+            return matriz[matriz.Length - 1][matriz[0].Length - 1];
+        }

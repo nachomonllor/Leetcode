@@ -1,0 +1,103 @@
+
+https://leetcode.com/problems/sort-characters-by-frequency/
+
+
+using Microsoft.VisualBasic.CompilerServices;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+
+
+        static void OrdenarArraysParalelos(char[] ch, int[] nums)
+        {
+
+            // Array.Sort(frecs, ch);
+
+            int[] frec = new int[nums.Max()];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                frec[nums[i]]++;
+            }
+
+            for (int num = nums.Max(); num >= 0; num--)
+            {
+                if(frec[num] > 0)
+                {
+                    
+                }
+            }
+
+
+        }
+
+
+        public static string FrequencySort(string s)
+        {
+
+            int[] frec = new int[26];
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                frec[s[i] - 'a']++;
+            }
+
+            Dictionary<char, int> dic = new Dictionary<char, int>();
+
+            for (int i = 0; i < 26; i++)
+            {
+                dic[(char)(i + 'a')] = frec[i];
+            }
+
+
+            char[] keys = dic.Keys.ToArray();
+            int[] values = dic.Values.ToArray();
+
+
+            OrdenarArraysParalelos(keys, values);
+
+            string concat = "";
+            // for (int i = 0; i < keys.Length; i++)
+            for (int i = keys.Length - 1; i >= 0; i--)
+            {
+                if (values[i] > 0)
+                {
+                    //Console.WriteLine(keys[i] + " " + values[i]);
+                    concat += new string(keys[i], values[i]);
+                }
+            }
+
+
+
+            return concat;
+
+
+
+        }
+
+
+        static void Main(string[] args)
+        {
+
+
+            string s = "tree"; //"eert"
+
+            //string s = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccaaaaaaaaaaaaa";
+
+
+           Console.WriteLine( FrequencySort(s));
+
+
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
