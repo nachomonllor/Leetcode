@@ -1,0 +1,53 @@
+https://leetcode.com/problems/verifying-an-alien-dictionary/submissions/
+
+public class Solution {
+      string compara(string a, string b, string orden)
+        {
+
+            Dictionary<char, int> indices = new Dictionary<char, int>();
+            for(int i =0; i<orden.Length; i++)
+            {
+                indices[orden[i]] = i;
+            }
+
+
+            for (int i = 0, j = 0; i < a.Length && j < b.Length; i++, j++)
+            {
+                if(indices[b[j]] < indices[a[i]])
+                {
+                    return b;
+                }
+                else if(indices[a[i]] < indices[b[j]])
+                {
+                    return a;
+                }
+            }
+
+            if(a.Length > b.Length)
+            {
+                return b; 
+            }
+            return a;
+
+        }
+
+
+        public  bool IsAlienSorted(string[] words, string order)
+        {
+
+
+            for (int i = 0; i + 1 < words.Length; i++)
+            {
+                string izq = compara(words[i], words[i + 1], order);
+
+                if(izq == words[i+1] && izq != words[i])
+                {
+                    return false;
+                }
+
+            }
+
+            return true;
+
+        }
+}
