@@ -1,0 +1,52 @@
+
+https://leetcode.com/problems/number-of-different-integers-in-a-string/submissions/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp160
+{
+    class Program
+    {
+
+        public static int NumDifferentIntegers(string word)
+        {
+            string s = "";
+            HashSet<string> enteros = new HashSet<string>();
+            for (int i = 0; i < word.Length; i++)
+            {
+                if(word[i] >= '0' && word[i] <= '9')
+                {
+                    s += (word[i]);
+                }
+                else
+                {
+                    if (s.Length > 0)
+                    {
+                        enteros.Add(s.TrimStart('0'));
+                    }
+                    s = "";
+                }
+            }
+
+            if (s.Length > 0)
+            {
+                enteros.Add(s.TrimStart('0'));
+            }
+
+            return enteros.Count;
+        }
+
+        static void Main(string[] args)
+        {
+
+            string word = "a123bc34d8ef34";
+            Console.WriteLine(NumDifferentIntegers(word));
+
+            Console.ReadLine();
+        }
+    }
+}
