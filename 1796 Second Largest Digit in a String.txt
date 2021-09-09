@@ -1,0 +1,61 @@
+https://leetcode.com/problems/second-largest-digit-in-a-string/submissions/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp160
+{
+    class Program
+    {
+
+
+        public static int SecondHighest(string s)
+        {
+            //SortedSet<int> sorted = new SortedSet<int>();
+            int[] sorted = new int[10];
+        
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (char.IsDigit(s[i]))
+                {
+                    sorted[s[i] - '0']++;
+                }
+            }
+
+            bool hayPrimero = false;
+            for (int i = 9; i >= 0; i--)
+            {
+                if (!hayPrimero)
+                {
+                    if (sorted[i] > 0)
+                    {
+                        hayPrimero = true;
+                    }
+                }
+                else 
+                {
+                    if (sorted[i] > 0)
+                    {
+                        return i;
+                    }
+                }
+            }
+
+
+            return -1;
+
+        }
+
+        static void Main(string[] args)
+        {
+            // string s = "dfa12321afd";
+            string s = "ck077";
+            Console.WriteLine(SecondHighest(s));
+
+            Console.ReadLine();
+        }
+    }
+}
