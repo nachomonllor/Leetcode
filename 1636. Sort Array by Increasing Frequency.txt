@@ -1,0 +1,91 @@
+https://leetcode.com/problems/sort-array-by-increasing-frequency/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp157
+{
+    class Program
+    {
+
+        public static int[] FrequencySort(int[] nums)
+        {
+            Dictionary<int, int> frec = new Dictionary<int, int>();
+
+            for(int i =0; i<nums.Length; i++)
+            {
+                if(frec.ContainsKey(nums[i]))
+                {
+                    frec[nums[i]]++;
+                }
+                else
+                {
+                    frec[nums[i]] = 1;
+                }
+            }
+
+            Dictionary<int, List<int>> frecNum = new Dictionary<int, List<int>>();
+            int[] keys = frec.Keys.ToArray();
+            int[] frecs = frec.Values.ToArray();
+
+            for(int i =0; i<frecs.Length; i++)
+            {
+                if(frecNum.ContainsKey(frecs[i]))
+                {
+                    frecNum[frecs[i]].Add(keys[i]);
+                }
+                else
+                {
+                    frecNum[frecs[i]] = new List<int>();
+                    frecNum[frecs[i]].Add(keys[i]);
+                }
+            }
+
+            Dictionary<int, List<int>> ordenadoPorFrec = (from pair in frecNum
+                                                    orderby pair.Key ascending
+                                                    select pair).ToDictionary(k => k.Key, v => v.Value);
+
+            List<int> ans = new List<int>();
+
+            foreach(KeyValuePair<int, List<int>> kvp in ordenadoPorFrec)
+            {
+                List<int> mismaFrec = kvp.Value;
+                mismaFrec.Sort();
+                mismaFrec.Reverse();
+
+                foreach(int item in mismaFrec)
+                {
+
+                    for(int i =0; i< kvp.Key; i++)
+                    {
+                        ans.Add(item);
+                    }
+
+                }
+            }
+
+            return ans.ToArray();
+
+
+        }
+
+
+
+        static void Main(string[] args)
+        {
+            int[] nums = { -1, 1, -6, 4, 5, -6, 1, 4, 1 };
+
+            Console.WriteLine();
+            foreach(int item in FrequencySort(nums))
+            {
+                Console.Write(item + " ");
+            }
+             
+
+            Console.ReadLine();
+        }
+    }
+}
