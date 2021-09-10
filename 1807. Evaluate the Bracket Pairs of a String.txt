@@ -1,0 +1,89 @@
+https://leetcode.com/problems/evaluate-the-bracket-pairs-of-a-string/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp160
+{
+    class Program
+    {
+
+        public static string Evaluate(string s, IList<IList<string>> knowledge)
+        {
+            Dictionary<string, string> diccio = new Dictionary<string, string>();
+
+            for (int i = 0; i < knowledge.Count; i++)
+            {
+                diccio.Add(knowledge[i][0], knowledge[i][1]);
+            }
+
+
+            StringBuilder key = new StringBuilder();
+            StringBuilder concat = new StringBuilder();
+
+            bool keyAbierto = false;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == '(')
+                {
+                    keyAbierto = true;
+                }
+
+                else if (!keyAbierto && s[i] != '(' && s[i] != ')')
+                {
+                    concat.Append(s[i]);
+                }
+                else if (s[i] == ')')
+                {
+                    if (diccio.ContainsKey(key.ToString()))
+                    {
+                        concat.Append(diccio[key.ToString()]);
+                    }
+                    else
+                    {
+                        concat.Append("?");
+                    }
+
+                    keyAbierto = false;
+                    key = new StringBuilder();
+                }
+                else if (keyAbierto)
+                {
+                    key.Append(s[i]);
+                }
+
+            }
+
+            return concat.ToString();
+
+        }
+
+        static void Main(string[] args)
+        {
+            //string s = "(name)is(age)yearsold";
+            //IList<IList<string>> knowledge = new List<IList<string>>();
+            //knowledge.Add(new string[] { "name", "bob" });
+            //knowledge.Add(new string[] { "age", "two" });
+
+
+
+            string s = "(hola)(chau)(estas)";
+            IList<IList<string>> knowledge = new List<IList<string>>();
+            knowledge.Add(new string[] { "hola", "HOLA" });
+            knowledge.Add(new string[] { "chau", "CHAU" });
+
+            Console.WriteLine(Evaluate(s, knowledge));
+
+            //   new List<string>( new string[] { "name", "bob" }), new List<string>( new string[] { "age", "two" } ));
+
+
+
+            Console.ReadLine();
+        }
+    }
+}
+
