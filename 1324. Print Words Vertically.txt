@@ -1,0 +1,66 @@
+
+https://leetcode.com/problems/print-words-vertically/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp175
+{
+    class Program
+    {
+
+        public static  IList<string> PrintVertically(string s)
+        {
+            string[] pal = s.Split(' ');
+            int max_len = 0;
+            foreach(string palabra in pal)
+            {
+                max_len = Math.Max(max_len, palabra.Length);
+            }
+
+            IList<string> lista = new List<string>();
+            for (int pos = 0; pos <= max_len; pos++)
+            {
+                //string concat = "";
+                StringBuilder concat = new StringBuilder();
+                foreach(string palabra in pal)
+                {
+                    if (pos  < palabra.Length) 
+                    {
+                        concat.Append(palabra[pos]);
+                    }
+                    else
+                    {
+                        concat.Append(" ");
+                    }
+                }
+               
+                string aux = concat.ToString().TrimEnd();
+                if (aux.Length > 0)
+                {
+                    lista.Add(aux);
+                }
+            }
+
+            return lista;
+
+        }
+
+        static void Main(string[] args)
+        {
+
+            string s = "TO BE OR NOT TO BE";
+
+            foreach(string item in PrintVertically(s))
+            {
+                Console.Write(item + " ");
+            }
+
+
+            Console.ReadLine();
+        }
+    }
+}
