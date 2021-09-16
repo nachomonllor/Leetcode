@@ -1,0 +1,25 @@
+https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/
+
+public class Solution {
+    public string ReverseParentheses(string s) {
+         char[] arr = s.ToCharArray();
+            Stack<int> indices = new Stack<int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == '(')
+                {
+                    indices.Push(i);
+                }
+                else if (arr[i] == ')')
+                {
+                    int abre = indices.Pop();
+                    //arr = RevertirArray(arr, abre, i);
+                    Array.Reverse(arr, abre, i-abre + 1);
+                }
+
+            }
+           
+            return new string(arr).Replace("(","").Replace(")","");
+    }
+}
