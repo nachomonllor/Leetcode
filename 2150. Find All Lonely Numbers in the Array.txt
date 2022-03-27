@@ -1,0 +1,35 @@
+
+https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/submissions/
+
+  public IList<int> FindLonely(int[] nums)
+        {
+            Dictionary<int, int> diccio = new Dictionary<int, int>();
+
+            foreach (int item in nums)
+            {
+                if (diccio.ContainsKey(item))
+                {
+                    diccio[item]++;
+                }
+                else
+                {
+                    diccio[item] = 1;
+                }
+            }
+
+            IList<int> ans = new List<int>();
+
+            foreach (KeyValuePair<int, int> kvp in diccio)
+            {
+                if (kvp.Value == 1)
+                {
+                    if (!diccio.ContainsKey(kvp.Key - 1) && !diccio.ContainsKey(kvp.Key + 1))
+                    {
+                        ans.Add(kvp.Key);
+                    }
+                }
+            }
+
+            return ans;
+
+        }
