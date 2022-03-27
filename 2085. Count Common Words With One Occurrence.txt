@@ -1,0 +1,67 @@
+
+
+https://leetcode.com/problems/count-common-words-with-one-occurrence/submissions/
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp312
+{
+    class Program
+    {
+        static Dictionary<string,int> ObtenerFrecuencias(string[] w)
+        {
+            Dictionary<string, int> diccio = new Dictionary<string, int>();
+            foreach(string item in w)
+            {
+                if(diccio.ContainsKey(item))
+                {
+                    diccio[item]++;
+                }
+                else
+                {
+                    diccio[item] = 1;
+                }
+            }
+            return diccio;
+        }
+
+        public static int CountWords(string[] words1, string[] words2)
+        {
+            int ans = 0;
+            Dictionary<string, int> w1 = ObtenerFrecuencias(words1);
+            Dictionary<string, int> w2 = ObtenerFrecuencias(words2);
+
+            foreach (KeyValuePair<string, int> kvp in w1)
+            {
+                if (kvp.Value == 1)
+                {
+                    if (w2.ContainsKey(kvp.Key))
+                    {
+                        if (w2[kvp.Key] == 1)
+                        {
+                            ans++;
+                        }
+                    }
+                }
+            }
+
+            return ans;
+        }
+
+
+        static void Main(string[] args)
+        {
+            string[] words1 = { "leetcode", "is", "amazing", "as", "is" };
+            string[] words2 = { "amazing", "leetcode", "is" };
+
+            Console.WriteLine(CountWords(words1, words2));
+
+            Console.ReadLine();
+        }
+    }
+}
