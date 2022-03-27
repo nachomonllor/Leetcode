@@ -1,0 +1,17 @@
+
+https://leetcode.com/problems/sorting-the-sentence/submissions/
+
+ public string SortSentence(string s) {
+        
+        string[] arr = s.Split(' ');
+        string[] sorted = new string[arr.Length];
+        for (int i = 0; i < arr.Length; i++)
+        {
+            string item = arr[i];
+            int pos = item[item.Length - 1] -'0';
+            sorted[pos - 1] = item.Substring(0, item.Length - 1);
+        }
+
+        return string.Join(" ", sorted);
+
+    }
