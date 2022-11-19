@@ -1,0 +1,47 @@
+
+https://leetcode.com/problems/single-element-in-a-sorted-array/submissions/
+
+//---------con diccionario contador de frecuencias --------------
+public class Solution {
+    public int SingleNonDuplicate(int[] nums) {
+       
+        Dictionary<int, int> cont = new Dictionary<int, int>();
+
+        for(int i = 0; i < nums.Length; i++)
+        {
+            if (cont.ContainsKey(nums[i]))
+            {
+                cont[nums[i]]++;
+            }
+            else
+            {
+                cont[nums[i]] = 1;
+            }
+        }
+
+        for(int i = 0; i < nums.Length; i++)
+        {
+            if (cont[nums[i]] == 1) return nums[i];
+        }
+        return -1;
+    }
+}
+
+
+//----------con array contador de frecuencias --------------
+public class Solution {
+    public int SingleNonDuplicate(int[] nums) {
+       int[] cont = new int[nums.Max() + 1];
+
+        for(int i = 0; i < nums.Length; i++)
+        {
+            cont[nums[i]]++;
+        }
+
+        for(int i = 0; i < nums.Length; i++)
+        {
+            if (cont[nums[i]] == 1) return nums[i];
+        }
+        return -1;
+    }
+}
