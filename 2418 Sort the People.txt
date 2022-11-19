@@ -1,0 +1,84 @@
+
+https://leetcode.com/problems/sort-the-people/submissions/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp40
+{
+    class Program
+    {
+        static void swap(int[] indices, int i, int j)
+        {
+            int temp = indices[i];
+            indices[i] = indices[j];
+            indices[j] = temp;
+        }
+
+        static int partition(int[] arr, int[] indices, int low, int high)
+        {
+
+            int pivot = arr[indices[high]];
+            int i = (low - 1);
+
+            for (int j = low; j <= high - 1; j++)
+            {
+                if (arr[indices[j]] > pivot)
+                {
+                    i++;
+                    swap(indices, i, j);
+                }
+            }
+            swap(indices, i + 1, high);
+            return (i + 1);
+        }
+
+        static void quickSort(int[] arr, int[] indices, int low, int high)
+        {
+            if (low < high)
+            {
+                int pi = partition(arr, indices, low, high);
+                quickSort(arr, indices, low, pi - 1);
+                quickSort(arr, indices, pi + 1, high);
+            }
+        }
+
+        public static string[] SortPeople(string[] names, int[] heights)
+        {
+            int[] indices = new int[names.Length];
+            for (int i = 0; i < indices.Length; i++)
+            {
+                indices[i] = i;
+            }
+
+            quickSort(heights, indices, 0, names.Length-1);
+
+            string[] res = new string[names.Length];
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                res[i] = names[indices[i]];
+            }
+
+            return res;
+        }
+
+        static void Main(string[] args)
+        {
+            string[] names = { "Mary", "John", "Emma" };
+            int[] heights =  {    180,    165,    170 };
+
+            //Output: ["Mary","Emma","John"]
+
+            foreach (string name in SortPeople(names, heights))
+            {
+                Console.Write(name + " ");
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
