@@ -13,27 +13,43 @@ namespace ConsoleApp1
     {
 
 
-
-        static void OrdenarArraysParalelos(char[] ch, int[] nums)
+	public string FrequencySort(string s)
         {
+            int N = 256;
 
-            // Array.Sort(frecs, ch);
+            int[] frec = new int[N];
 
-            int[] frec = new int[nums.Max()];
-            for (int i = 0; i < nums.Length; i++)
+            for (int i = 0; i < s.Length; i++)
             {
-                frec[nums[i]]++;
+                frec[s[i] - '0']++;
             }
 
-            for (int num = nums.Max(); num >= 0; num--)
+            string[] lugares = new string[s.Length];
+
+            for (int i = 0; i < N; i++)
             {
-                if(frec[num] > 0)
+                if (frec[i] > 0) lugares[frec[i] - 1] += (char)(i+'0');
+            }
+
+
+            StringBuilder ans = new StringBuilder();
+
+            foreach (string item in lugares)
+            {
+                if (!string.IsNullOrEmpty(item))
                 {
-                    
+                    foreach (char ch in item)
+                    {
+                        ans.Append(new string(ch, frec[ch - '0']));
+                    }
                 }
             }
 
+            char[] chars = ans.ToString().ToCharArray();
 
+            Array.Reverse(chars);
+
+            return new string(chars);
         }
 
 
