@@ -1,0 +1,8 @@
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2363 Merge Similar Items\bin\Debug\2363 Merge Similar Items.exe.config
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2363 Merge Similar Items\bin\Debug\2363 Merge Similar Items.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2363 Merge Similar Items\bin\Debug\2363 Merge Similar Items.pdb
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2363 Merge Similar Items\obj\Debug\2363 Merge Similar Items.csproj.AssemblyReference.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2363 Merge Similar Items\obj\Debug\2363 Merge Similar Items.csproj.SuggestedBindingRedirects.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2363 Merge Similar Items\obj\Debug\2363 Merge Similar Items.csproj.CoreCompileInputs.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2363 Merge Similar Items\obj\Debug\2363 Merge Similar Items.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2363 Merge Similar Items\obj\Debug\2363 Merge Similar Items.pdb
