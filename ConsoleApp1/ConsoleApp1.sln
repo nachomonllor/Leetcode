@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2363 Merge Similar Items", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2160MinimumSumOfFourDigitNumberAfterSplittingDigits", "..\2160MinimumSumOfFourDigitNumberAfterSplittingDigits\2160MinimumSumOfFourDigitNumberAfterSplittingDigits.csproj", "{A17986E9-1E49-45F0-94C8-7FF6E6CEAAD3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2544AlternatingDigitSum", "..\2544AlternatingDigitSum\2544AlternatingDigitSum.csproj", "{E4312A58-102A-4E56-86EF-C0828FB68AA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A17986E9-1E49-45F0-94C8-7FF6E6CEAAD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A17986E9-1E49-45F0-94C8-7FF6E6CEAAD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A17986E9-1E49-45F0-94C8-7FF6E6CEAAD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4312A58-102A-4E56-86EF-C0828FB68AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4312A58-102A-4E56-86EF-C0828FB68AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4312A58-102A-4E56-86EF-C0828FB68AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4312A58-102A-4E56-86EF-C0828FB68AA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

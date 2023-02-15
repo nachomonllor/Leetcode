@@ -1,0 +1,8 @@
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2544AlternatingDigitSum\bin\Debug\2544AlternatingDigitSum.exe.config
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2544AlternatingDigitSum\bin\Debug\2544AlternatingDigitSum.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2544AlternatingDigitSum\bin\Debug\2544AlternatingDigitSum.pdb
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2544AlternatingDigitSum\obj\Debug\2544AlternatingDigitSum.csproj.AssemblyReference.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2544AlternatingDigitSum\obj\Debug\2544AlternatingDigitSum.csproj.SuggestedBindingRedirects.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2544AlternatingDigitSum\obj\Debug\2544AlternatingDigitSum.csproj.CoreCompileInputs.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2544AlternatingDigitSum\obj\Debug\2544AlternatingDigitSum.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2544AlternatingDigitSum\obj\Debug\2544AlternatingDigitSum.pdb
