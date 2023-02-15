@@ -1,0 +1,8 @@
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2154KeepMultiplyingFoundValuesByTwo\bin\Debug\2154KeepMultiplyingFoundValuesByTwo.exe.config
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2154KeepMultiplyingFoundValuesByTwo\bin\Debug\2154KeepMultiplyingFoundValuesByTwo.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2154KeepMultiplyingFoundValuesByTwo\bin\Debug\2154KeepMultiplyingFoundValuesByTwo.pdb
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2154KeepMultiplyingFoundValuesByTwo\obj\Debug\2154KeepMultiplyingFoundValuesByTwo.csproj.AssemblyReference.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2154KeepMultiplyingFoundValuesByTwo\obj\Debug\2154KeepMultiplyingFoundValuesByTwo.csproj.SuggestedBindingRedirects.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2154KeepMultiplyingFoundValuesByTwo\obj\Debug\2154KeepMultiplyingFoundValuesByTwo.csproj.CoreCompileInputs.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2154KeepMultiplyingFoundValuesByTwo\obj\Debug\2154KeepMultiplyingFoundValuesByTwo.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\2154KeepMultiplyingFoundValuesByTwo\obj\Debug\2154KeepMultiplyingFoundValuesByTwo.pdb
