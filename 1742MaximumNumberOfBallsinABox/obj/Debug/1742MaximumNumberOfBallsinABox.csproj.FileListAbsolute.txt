@@ -1,0 +1,8 @@
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1742MaximumNumberOfBallsinABox\bin\Debug\1742MaximumNumberOfBallsinABox.exe.config
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1742MaximumNumberOfBallsinABox\bin\Debug\1742MaximumNumberOfBallsinABox.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1742MaximumNumberOfBallsinABox\bin\Debug\1742MaximumNumberOfBallsinABox.pdb
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1742MaximumNumberOfBallsinABox\obj\Debug\1742MaximumNumberOfBallsinABox.csproj.AssemblyReference.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1742MaximumNumberOfBallsinABox\obj\Debug\1742MaximumNumberOfBallsinABox.csproj.SuggestedBindingRedirects.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1742MaximumNumberOfBallsinABox\obj\Debug\1742MaximumNumberOfBallsinABox.csproj.CoreCompileInputs.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1742MaximumNumberOfBallsinABox\obj\Debug\1742MaximumNumberOfBallsinABox.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1742MaximumNumberOfBallsinABox\obj\Debug\1742MaximumNumberOfBallsinABox.pdb

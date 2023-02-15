@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2160MinimumSumOfFourDigitNu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2544AlternatingDigitSum", "..\2544AlternatingDigitSum\2544AlternatingDigitSum.csproj", "{E4312A58-102A-4E56-86EF-C0828FB68AA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1742MaximumNumberOfBallsinABox", "..\1742MaximumNumberOfBallsinABox\1742MaximumNumberOfBallsinABox.csproj", "{A5B01DFC-E43B-4AA1-B6E9-7E68454A0B73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{E4312A58-102A-4E56-86EF-C0828FB68AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4312A58-102A-4E56-86EF-C0828FB68AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4312A58-102A-4E56-86EF-C0828FB68AA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5B01DFC-E43B-4AA1-B6E9-7E68454A0B73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5B01DFC-E43B-4AA1-B6E9-7E68454A0B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5B01DFC-E43B-4AA1-B6E9-7E68454A0B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5B01DFC-E43B-4AA1-B6E9-7E68454A0B73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
