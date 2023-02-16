@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1742MaximumNumberOfBallsinA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2154KeepMultiplyingFoundValuesByTwo", "..\2154KeepMultiplyingFoundValuesByTwo\2154KeepMultiplyingFoundValuesByTwo.csproj", "{2615B331-3084-4A68-9142-BC71B7697FAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "908SmallestRangeI", "..\908SmallestRangeI\908SmallestRangeI.csproj", "{00C10076-5823-4A78-B53D-59C4EEF4C464}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{2615B331-3084-4A68-9142-BC71B7697FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2615B331-3084-4A68-9142-BC71B7697FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2615B331-3084-4A68-9142-BC71B7697FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C10076-5823-4A78-B53D-59C4EEF4C464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C10076-5823-4A78-B53D-59C4EEF4C464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C10076-5823-4A78-B53D-59C4EEF4C464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C10076-5823-4A78-B53D-59C4EEF4C464}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
