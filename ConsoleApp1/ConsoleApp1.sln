@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2154KeepMultiplyingFoundVal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "908SmallestRangeI", "..\908SmallestRangeI\908SmallestRangeI.csproj", "{00C10076-5823-4A78-B53D-59C4EEF4C464}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1337TheKWeakestRowsInAMatrix", "..\1337TheKWeakestRowsInAMatrix\1337TheKWeakestRowsInAMatrix.csproj", "{CD5ECE65-3F84-46EE-AC10-695F81AE1EC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{00C10076-5823-4A78-B53D-59C4EEF4C464}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00C10076-5823-4A78-B53D-59C4EEF4C464}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00C10076-5823-4A78-B53D-59C4EEF4C464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD5ECE65-3F84-46EE-AC10-695F81AE1EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD5ECE65-3F84-46EE-AC10-695F81AE1EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD5ECE65-3F84-46EE-AC10-695F81AE1EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD5ECE65-3F84-46EE-AC10-695F81AE1EC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

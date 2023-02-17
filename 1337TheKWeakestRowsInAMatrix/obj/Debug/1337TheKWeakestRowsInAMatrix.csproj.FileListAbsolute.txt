@@ -1,0 +1,8 @@
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1337TheKWeakestRowsInAMatrix\bin\Debug\1337TheKWeakestRowsInAMatrix.exe.config
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1337TheKWeakestRowsInAMatrix\bin\Debug\1337TheKWeakestRowsInAMatrix.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1337TheKWeakestRowsInAMatrix\bin\Debug\1337TheKWeakestRowsInAMatrix.pdb
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1337TheKWeakestRowsInAMatrix\obj\Debug\1337TheKWeakestRowsInAMatrix.csproj.AssemblyReference.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1337TheKWeakestRowsInAMatrix\obj\Debug\1337TheKWeakestRowsInAMatrix.csproj.SuggestedBindingRedirects.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1337TheKWeakestRowsInAMatrix\obj\Debug\1337TheKWeakestRowsInAMatrix.csproj.CoreCompileInputs.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1337TheKWeakestRowsInAMatrix\obj\Debug\1337TheKWeakestRowsInAMatrix.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1337TheKWeakestRowsInAMatrix\obj\Debug\1337TheKWeakestRowsInAMatrix.pdb
