@@ -1,10 +1,6 @@
-﻿using Lucene.Net.Util;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 
@@ -13,79 +9,34 @@ namespace _1337TheKWeakestRowsInAMatrix
     class Program
     {
 
+        //SOLUCION DE CHATGPT (Supera al 96 %)
+        public int[] KWeakestRowsCHATGPT(int[][] mat, int k)
+        {
+            // Create a list of tuples where each tuple contains the number of soldiers and the index of the row
+            List<(int soldiers, int index)> rows = new List<(int, int)>();
+            for (int i = 0; i < mat.Length; i++)
+            {
+                int soldiers = 0;
+                for (int j = 0; j < mat[i].Length; j++)
+                {
+                    soldiers += mat[i][j];
+                }
+                rows.Add((soldiers, i));
+            }
+            // Sort the list of tuples by the number of soldiers (ascending) and then by the index of the row (ascending)
+            rows.Sort((x, y) => x.soldiers == y.soldiers ? x.index - y.index : x.soldiers - y.soldiers);
+            // Create an array with the indices of the k weakest rows
+            int[] result = new int[k];
+            for (int i = 0; i < k; i++)
+            {
+                result[i] = rows[i].index;
+            }
+            return result;
+        }
 
 
-        //static int binarySearch(int[] arr, int x)
-        //{
-        //    int l = 0, r = arr.Length - 1;
-        //    while (l <= r)
-        //    {
-        //        int m = l + (r - l) / 2;
 
-        //        // Check if x is present at mid
-        //        if (arr[m] == x)
-        //            return m;
-
-        //        // If x greater, ignore left half
-        //        if (arr[m] < x)
-        //            l = m + 1;
-
-        //        // If x is smaller, ignore right half
-        //        else
-        //            r = m - 1;
-        //    }
-
-        //    // if we reach here, then element was
-        //    // not present
-        //    return -1;
-        //}
-
-
-        //public int[] KWeakestRows(int[][] mat, int k)
-        //{
-        //    Dictionary<int, int> dic = new Dictionary<int, int>();
-
-        //    int cont = 0;
-        //    for (int i = 0; i < mat.Length; i++)
-        //    {
-        //        cont = 0;
-        //        for (int j = 0; j < mat[i].Length; j++)
-        //        {
-        //            if (mat[i][j] == 1)
-        //            {
-        //                cont++;
-        //            }
-        //            else
-        //            {
-        //                break;
-        //            }
-        //        }
-        //        dic.Add(i, cont);
-        //    }
-
-        //    Dictionary<int, int> items = (from pair in dic
-        //                                  orderby pair.Value
-        //                                  select pair).ToDictionary(x => x.Key, x => x.Value);
-
-        //    List<int> ans = new List<int>();
-        //    cont = 0;
-        //    foreach (KeyValuePair<int, int> kvp in items)
-        //    {
-        //        if (cont >= k)
-        //        {
-        //            break;
-        //        }
-
-        //        ans.Add(kvp.Key);
-        //        cont++;
-        //    }
-
-        //    return ans.ToArray();
-
-        //}
-
-
-        static int binarySearch(int[] arr)
+        static  int binarySearch(int[] arr)
         {
 
             int l = 0, r = arr.Length - 1;
@@ -100,7 +51,7 @@ namespace _1337TheKWeakestRowsInAMatrix
                 if (arr[m] == 1 && m+1 < arr.Length &&  arr[m+1] == 0)
                     return m + 1;
 
-                if (arr[m] == 1 && m+1 < arr.Length &&  arr[m+1] == 1) 
+                if (arr[m] == 1 && m+1 < arr.Length &&  arr[m+1] == 1)
                     l = m + 1;
 
                 if (arr[m] == 0  && m+1 < arr.Length && arr[m+1] == 0)
@@ -118,13 +69,9 @@ namespace _1337TheKWeakestRowsInAMatrix
         }
 
 
-
-
         public static int[] KWeakestRows(int[][] mat, int k)
         {
-            Dictionary<int, int> dic = new Dictionary<int, int>();
-        
-
+            var dic = new SortedDictionary<int, List<int>>();
 
             int cont = 0;
             for (int i = 0; i < mat.Length; i++)
@@ -132,15 +79,35 @@ namespace _1337TheKWeakestRowsInAMatrix
                 int[] fila = mat[i];
                 cont = binarySearch(fila);
 
-                Console.WriteLine(i+ " " + cont);
-                dic.Add(i, cont);
+                if(dic.ContainsKey(cont))
+                {
+                    dic[cont].Add(i);
+                }
+                else
+                {
+                    dic[cont] = new List<int>();
+                    dic[cont].Add(i);
+                }
 
             }
 
 
-            return (from pair in dic
-                              orderby pair.Value
-                              select pair).ToDictionary(x => x.Key, x => x.Value).Keys.Take(k).ToArray();
+            List<int> ans = new List<int>();
+            cont = 0;
+            foreach (KeyValuePair<int, List< int > >  kvp in dic)
+            {
+                List<int> rows = kvp.Value;
+                rows.Sort();
+
+                foreach(int item in rows)
+                {
+                    if (cont >= k) return ans.ToArray();
+                    ans.Add(item);
+                    cont++;
+                }
+            }
+
+            return ans.ToArray();
 
         }
 
