@@ -1,0 +1,8 @@
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1572 Matrix Diagonal Sum\bin\Debug\1572 Matrix Diagonal Sum.exe.config
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1572 Matrix Diagonal Sum\bin\Debug\1572 Matrix Diagonal Sum.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1572 Matrix Diagonal Sum\bin\Debug\1572 Matrix Diagonal Sum.pdb
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1572 Matrix Diagonal Sum\obj\Debug\1572 Matrix Diagonal Sum.csproj.AssemblyReference.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1572 Matrix Diagonal Sum\obj\Debug\1572 Matrix Diagonal Sum.csproj.SuggestedBindingRedirects.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1572 Matrix Diagonal Sum\obj\Debug\1572 Matrix Diagonal Sum.csproj.CoreCompileInputs.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1572 Matrix Diagonal Sum\obj\Debug\1572 Matrix Diagonal Sum.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1572 Matrix Diagonal Sum\obj\Debug\1572 Matrix Diagonal Sum.pdb
