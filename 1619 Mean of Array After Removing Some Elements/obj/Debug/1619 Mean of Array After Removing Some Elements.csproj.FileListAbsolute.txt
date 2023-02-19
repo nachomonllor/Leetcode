@@ -1,0 +1,8 @@
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1619 Mean of Array After Removing Some Elements\bin\Debug\1619 Mean of Array After Removing Some Elements.exe.config
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1619 Mean of Array After Removing Some Elements\bin\Debug\1619 Mean of Array After Removing Some Elements.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1619 Mean of Array After Removing Some Elements\bin\Debug\1619 Mean of Array After Removing Some Elements.pdb
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1619 Mean of Array After Removing Some Elements\obj\Debug\1619 Mean of Array After Removing Some Elements.csproj.AssemblyReference.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1619 Mean of Array After Removing Some Elements\obj\Debug\1619 Mean of Array After Removing Some Elements.csproj.SuggestedBindingRedirects.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1619 Mean of Array After Removing Some Elements\obj\Debug\1619 Mean of Array After Removing Some Elements.csproj.CoreCompileInputs.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1619 Mean of Array After Removing Some Elements\obj\Debug\1619 Mean of Array After Removing Some Elements.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1619 Mean of Array After Removing Some Elements\obj\Debug\1619 Mean of Array After Removing Some Elements.pdb
