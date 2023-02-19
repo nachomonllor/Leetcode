@@ -1,0 +1,8 @@
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1550ThreeConsecutiveOdds\bin\Debug\1550ThreeConsecutiveOdds.exe.config
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1550ThreeConsecutiveOdds\bin\Debug\1550ThreeConsecutiveOdds.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1550ThreeConsecutiveOdds\bin\Debug\1550ThreeConsecutiveOdds.pdb
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1550ThreeConsecutiveOdds\obj\Debug\1550ThreeConsecutiveOdds.csproj.AssemblyReference.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1550ThreeConsecutiveOdds\obj\Debug\1550ThreeConsecutiveOdds.csproj.SuggestedBindingRedirects.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1550ThreeConsecutiveOdds\obj\Debug\1550ThreeConsecutiveOdds.csproj.CoreCompileInputs.cache
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1550ThreeConsecutiveOdds\obj\Debug\1550ThreeConsecutiveOdds.exe
+C:\Users\nacho\OneDrive\Desktop\Leetcode\1550ThreeConsecutiveOdds\obj\Debug\1550ThreeConsecutiveOdds.pdb
