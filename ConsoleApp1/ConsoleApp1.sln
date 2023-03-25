@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2273 Find Resultant Array A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1572 Matrix Diagonal Sum", "..\1572 Matrix Diagonal Sum\1572 Matrix Diagonal Sum.csproj", "{4610D1FC-1B1D-43A7-A138-1263EFB9D784}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Find the Index of the First Occurrence in a String", "..\Find the Index of the First Occurrence in a String\Find the Index of the First Occurrence in a String.csproj", "{A9AD9A5E-CF22-4050-8301-96EBE7EAE568}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{4610D1FC-1B1D-43A7-A138-1263EFB9D784}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4610D1FC-1B1D-43A7-A138-1263EFB9D784}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4610D1FC-1B1D-43A7-A138-1263EFB9D784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9AD9A5E-CF22-4050-8301-96EBE7EAE568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9AD9A5E-CF22-4050-8301-96EBE7EAE568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9AD9A5E-CF22-4050-8301-96EBE7EAE568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9AD9A5E-CF22-4050-8301-96EBE7EAE568}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
