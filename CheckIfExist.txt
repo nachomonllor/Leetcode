@@ -1,0 +1,19 @@
+https://leetcode.com/explore/learn/card/fun-with-arrays/527/searching-for-items-in-an-array/3250/
+
+public class Solution {
+    public bool CheckIfExist(int[] arr) {
+        HashSet<int> hash = new HashSet<int>();
+        for(int i = 0; i < arr.Length; i++)
+        {
+            int mitad = arr[i]/2;
+            int resto = arr[i] % 2;
+            if (hash.Contains(2*arr[i]) || (hash.Contains(mitad) && resto == 0 ))
+            {
+                return true;
+            }
+            hash.Add(arr[i]);
+        }
+        return false;
+        
+    }
+}
